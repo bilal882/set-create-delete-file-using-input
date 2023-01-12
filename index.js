@@ -3,10 +3,19 @@ const path = require("path");
 const dirName = path.join(__dirname, "files");
 
 console.log(dirName);
+//  This will make files
+// for (i = 0; i < 5; i++) {
+//   fs.writeFileSync(`${dirName}/${i}.txt`, `This is file ${i}`);
+// }
 
-for (i = 0; i < 5; i++) {
-  fs.writeFileSync(`${dirName}/${i}.txt`, `This is file ${i}`);
-}
+//* Now i want to list all files in files folder
+fs.readdir(dirName, (err, files) => {
+  //   console.log(files); //for all files list in an array
+  // for a file separately
+  files.forEach((file) => {
+    console.log(file);
+  });
+});
 
 // const input = process.argv;
 
